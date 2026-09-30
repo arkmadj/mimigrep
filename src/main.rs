@@ -19,6 +19,13 @@ fn main() {
     println!("With text:\n{contents}");
 }
 
+fn run(config: Config) {
+    let contents =
+        fs::read_to_string(config.file_path).expect("Should have been able to read the file");
+
+    println!("With text:\n{contents}");
+}
+
 struct Config {
     query: String,
     file_path: String,
